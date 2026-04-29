@@ -194,8 +194,8 @@ The sign-flipping attack is configured in client_baseline.py for Baseline and cl
 
 #### Parameters:
 
-- attack_type = flip (Type of attack: flip, scale, or noise)
-- attack_strength = 2.0 (Multiplier for attack magnitude)
+- attack_type = flip
+- attack_strength = 2.0 
 
 #### The attack transforms an honest update delta into a poisoned update:
 
