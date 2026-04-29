@@ -207,14 +207,14 @@ The sign-flipping attack is configured in client_baseline.py for Baseline and cl
 
 Thesis-FL-MTD-Attack-Analysis-and-Defense-Optimization/
 
-- FL Baseline/
+- #### FL Baseline/
   - server_baseline.py
   - client_baseline.py
   - client1.py to client10.py
   - data_utils.py
   - model_utils.py
 
-- FL MPC/
+- #### FL MPC/
   - server.py
   - client_template.py
   - client1.py to client10.py
@@ -224,7 +224,7 @@ Thesis-FL-MTD-Attack-Analysis-and-Defense-Optimization/
   - data_utils.py
   - model_utils.py
 
-- FL MTD/
+- #### FL MTD/
   - server.py
   - client_template.py
   - client1.py to client20.py
