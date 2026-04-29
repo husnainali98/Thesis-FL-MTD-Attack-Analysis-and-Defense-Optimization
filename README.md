@@ -205,36 +205,38 @@ The attack transforms an honest update delta into a poisoned update:
 
 ## Repository Structure
 
+## Repository Structure
+
 Thesis-FL-MTD-Attack-Analysis-and-Defense-Optimization/
-│
-├── FL Baseline/
-│   ├── server_baseline.py
-│   ├── client_baseline.py
-│   ├── client1.py to client10.py
-│   ├── data_utils.py
-│   └── model_utils.py
-│
-├── FL MPC/
-│   ├── server.py
-│   ├── client_template.py
-│   ├── client1.py to client10.py
-│   ├── node_template.py
-│   ├── node_run.py
-│   ├── mpc_utils.py
-│   ├── data_utils.py
-│   └── model_utils.py
-│
-├── FL MTD/
-│   ├── server.py
-│   ├── client_template.py
-│   ├── client1.py to client20.py
-│   ├── node_template.py
-│   ├── node_run.py
-│   ├── mpc_utils.py
-│   ├── data_utils.py
-│   └── model_utils.py
-│
-└── README.md
+
+- FL Baseline/
+  - server_baseline.py
+  - client_baseline.py
+  - client1.py to client10.py
+  - data_utils.py
+  - model_utils.py
+
+- FL MPC/
+  - server.py
+  - client_template.py
+  - client1.py to client10.py
+  - node_template.py
+  - node_run.py
+  - mpc_utils.py
+  - data_utils.py
+  - model_utils.py
+
+- FL MTD/
+  - server.py
+  - client_template.py
+  - client1.py to client20.py
+  - node_template.py
+  - node_run.py
+  - mpc_utils.py
+  - data_utils.py
+  - model_utils.py
+
+- README.md
 
 ## MTD Defense Parameters
 
