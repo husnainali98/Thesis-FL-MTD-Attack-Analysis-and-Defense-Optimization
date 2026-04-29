@@ -54,7 +54,7 @@ The MNIST dataset will download automatically when you run any client for the fi
 
 #### Navigate to the baseline folder:
 
-`cd FL Baseline`
+`cd "FL Baseline"`
 
 #### Start the server in one terminal:
 
@@ -88,7 +88,7 @@ The MNIST dataset will download automatically when you run any client for the fi
 
 ##### Navigate to the MPC folder:
 
-`cd FL MPC`
+`cd "FL MPC"`
 
 ##### Start the server in one terminal:
 
@@ -130,7 +130,7 @@ The MNIST dataset will download automatically when you run any client for the fi
 
 #### Navigate to the MTD folder:
 
-`cd FL MTD`
+`cd "FL MTD"`
 
 #### Start the server in one terminal:
 
