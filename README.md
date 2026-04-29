@@ -52,15 +52,15 @@ The MNIST dataset will download automatically when you run any client for the fi
 
 ### 1. Baseline FL (No Defense)
 
-Navigate to the baseline folder:
+# Navigate to the baseline folder:
 
-`cd "FL Baseline"`
+`cd FL Baseline`
 
-Start the server in one terminal:
+# Start the server in one terminal:
 
 `python server_baseline.py`
 
-Start each client in separate terminals:
+# Start each client in separate terminals:
 
 `python client1.py`
 
@@ -86,15 +86,15 @@ Start each client in separate terminals:
 
 ### 2. MPC-based FL (Privacy Only)
 
-Navigate to the MPC folder:
+# Navigate to the MPC folder:
 
-`cd "FL MPC"`
+`cd FL MPC`
 
-Start the server in one terminal:
+# Start the server in one terminal:
 
 `python server.py`
 
-Start three MPC helper nodes in separate terminals:
+# Start 3 MPC helper nodes in separate terminals:
 
 `python node_run.py 0`
 
@@ -102,7 +102,7 @@ Start three MPC helper nodes in separate terminals:
 
 `python node_run.py 2`
 
-Start ten clients in separate terminals:
+# Start 10 clients in separate terminals:
 
 `python client1.py`
 
@@ -128,15 +128,15 @@ Start ten clients in separate terminals:
 
 ### 3. MTD (Proposed Defense)
 
-Navigate to the MTD folder:
+# Navigate to the MTD folder:
 
-`cd "FL MTD"`
+`cd FL MTD`
 
-Start the server in one terminal:
+# Start the server in one terminal:
 
 `python server.py`
 
-Start three MPC helper nodes in separate terminals:
+# Start three MPC helper nodes in separate terminals:
 
 `python node_run.py 0`
 
@@ -144,7 +144,7 @@ Start three MPC helper nodes in separate terminals:
 
 `python node_run.py 2`
 
-Start twenty clients in separate terminals:
+# Start 20 clients in separate terminals:
 
 `python client1.py`
 
@@ -192,12 +192,12 @@ Start twenty clients in separate terminals:
 
 The sign-flipping attack is configured in client_baseline.py for Baseline and client_template.py for MPC and MTD.
 
-Parameters:
+# Parameters:
 
 - attack_type = flip (Type of attack: flip, scale, or noise)
 - attack_strength = 2.0 (Multiplier for attack magnitude)
 
-The attack transforms an honest update delta into a poisoned update:
+# The attack transforms an honest update delta into a poisoned update:
 
 `delta_prime = -2.0 * delta`
 
@@ -248,7 +248,7 @@ Thesis-FL-MTD-Attack-Analysis-and-Defense-Optimization/
 - SUSPICIOUS_ACC_THRESHOLD = 0.80 (Accuracy below this triggers suspicion)
 - SUSPICIOUS_LOSS_THRESHOLD = 2.0 (Loss above this triggers suspicion)
 
-Trust score formula:
+# Trust score formula:
 
 `trust = 1.0 - 0.7 * (suspicious_count / selected_count)`
 
