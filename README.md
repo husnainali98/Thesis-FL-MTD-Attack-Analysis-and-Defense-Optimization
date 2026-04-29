@@ -1,4 +1,4 @@
-# Master's Thesis: Federated Learning with Moving Target Defense
+# Master's Thesis: Federated Learning with Moving Target Defense: Attack Analysis and Defense Optimization
 
 **Author:** Husnain Ali (BCYW9R)  
 **Supervisor:** Aya Khedda  
