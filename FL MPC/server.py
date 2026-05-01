@@ -149,9 +149,11 @@ class FedAvgWithASS(FedAvg):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._model = Net()
+        self._global_nds = None
 
     def initialize_parameters(self, client_manager):
         nds = [p.detach().cpu().numpy() for p in self._model.parameters()]
+        self._global_nds = nds
         print("[SERVER] Initialized global parameters locally.", flush=True)
         return ndarrays_to_parameters(nds)
 
@@ -165,9 +167,6 @@ class FedAvgWithASS(FedAvg):
     def aggregate_fit(self, server_round, results, failures):
         secure_start = time.perf_counter()
 
-        aggregated_params, metrics = super().aggregate_fit(server_round, results, failures)
-        agg_nds = parameters_to_ndarrays(aggregated_params)
-
         while True:
             with ass_lock:
                 cnt = len(ass_server_shares.get(server_round, []))
@@ -178,27 +177,28 @@ class FedAvgWithASS(FedAvg):
         with ass_lock:
             shares_list = ass_server_shares[server_round]
 
-        server_sum = shares_list[0]
+        server_sum = [arr.copy() for arr in shares_list[0]]
         for client_layers in shares_list[1:]:
             for i in range(len(server_sum)):
-                server_sum[i] += client_layers[i]
+                server_sum[i] = server_sum[i] + client_layers[i]
 
         node_sums = [get_node_sum(server_round, p) for p in NODE_PORTS]
 
-        for i in range(len(agg_nds)):
+        for i in range(len(self._global_nds)):
             delta_sum = server_sum[i]
             for node_sum in node_sums:
-                delta_sum += node_sum[i]
+                delta_sum = delta_sum + node_sum[i]
 
             delta_avg = delta_sum / float(EXPECTED_CLIENTS)
-            agg_nds[i] = (agg_nds[i] + delta_avg).astype(np.float32)
+            self._global_nds[i] = (
+                self._global_nds[i].astype(np.float64) + delta_avg.astype(np.float64)
+            ).astype(np.float32)
 
         secureagg_total_t[server_round] = time.perf_counter() - secure_start
 
         print(f"[SERVER] round={server_round} applied secure update.", flush=True)
-        return ndarrays_to_parameters(agg_nds), metrics
+        return ndarrays_to_parameters(self._global_nds), {}
 
-    
     def aggregate_evaluate(self, server_round, results, failures):
 
         loss_list = []
@@ -243,6 +243,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-    
