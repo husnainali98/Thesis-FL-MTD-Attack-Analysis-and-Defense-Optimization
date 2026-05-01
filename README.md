@@ -96,10 +96,6 @@ Install the required packages:
 
 `python download_data.py`
 
-##### Start the server in the next terminal:
-
-`python server.py`
-
 ##### Start 3 MPC helper nodes in separate terminals:
 
 `python node_run.py 0`
@@ -107,6 +103,12 @@ Install the required packages:
 `python node_run.py 1`
 
 `python node_run.py 2`
+
+
+##### Start the server in the next terminal:
+
+`python server.py`
+
 
 #### Start 10 clients in separate terminals:
 
@@ -142,9 +144,6 @@ Install the required packages:
 
 `python download_data.py`
 
-#### Start the server in next terminal:
-
-`python server.py`
 
 #### Start three MPC helper nodes in separate terminals:
 
@@ -153,6 +152,10 @@ Install the required packages:
 `python node_run.py 1`
 
 `python node_run.py 2`
+
+#### Start the server in the next terminal:
+
+`python server.py`
 
 #### Start 20 clients in separate terminals:
 
