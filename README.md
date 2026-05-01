@@ -56,7 +56,11 @@ The MNIST dataset will download automatically when you run any client for the fi
 
 `cd "FL Baseline"`
 
-#### Start the server in one terminal:
+#### Start downloading data in the first terminal: (Mandatory)
+
+`python download_data.py`
+
+#### Start the server in the next terminal after downloading data:
 
 `python server_baseline.py`
 
@@ -90,7 +94,11 @@ The MNIST dataset will download automatically when you run any client for the fi
 
 `cd "FL MPC"`
 
-##### Start the server in one terminal:
+#### Start downloading data in the first terminal: (Mandatory)
+
+`python download_data.py`
+
+##### Start the server in the next terminal:
 
 `python server.py`
 
@@ -132,7 +140,11 @@ The MNIST dataset will download automatically when you run any client for the fi
 
 `cd "FL MTD"`
 
-#### Start the server in one terminal:
+#### Start downloading data in the first terminal: (Mandatory)
+
+`python download_data.py`
+
+#### Start the server in next terminal:
 
 `python server.py`
 
