@@ -46,9 +46,7 @@ Install the required packages:
 
 `pip install flwr torch torchvision numpy`
 
-The MNIST dataset will download automatically when you run any client for the first time.
 
----
 
 ### 1. Baseline FL (No Defense)
 
@@ -56,7 +54,7 @@ The MNIST dataset will download automatically when you run any client for the fi
 
 `cd "FL Baseline"`
 
-#### Start downloading data in the first terminal: (Mandatory)
+#### Start downloading data in the first terminal: (Mandatory for first time)
 
 `python download_data.py`
 
@@ -94,7 +92,7 @@ The MNIST dataset will download automatically when you run any client for the fi
 
 `cd "FL MPC"`
 
-#### Start downloading data in the first terminal: (Mandatory)
+#### Start downloading data in the first terminal: (Mandatory for first time)
 
 `python download_data.py`
 
@@ -140,7 +138,7 @@ The MNIST dataset will download automatically when you run any client for the fi
 
 `cd "FL MTD"`
 
-#### Start downloading data in the first terminal: (Mandatory)
+#### Start downloading data in the first terminal: (Mandatory for first time)
 
 `python download_data.py`
 
